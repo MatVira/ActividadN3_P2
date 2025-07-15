@@ -33,6 +33,24 @@ class InputRange extends HTMLElement {
     const inicio = parseInt(this.shadowRoot.querySelector('#inicio').value);
     const fin = parseInt(this.shadowRoot.querySelector('#fin').value);
     
+        if (isNaN(inicio) || isNaN(fin)) {
+      alert('Por favor ingresa valores numéricos válidos.');
+      return;
+    }
+
+    if (inicio > fin) {
+      alert('El número inicial debe ser menor o igual al final.');
+      return;
+    }
+
+    const evento = new CustomEvent('rango-seleccionado', {
+      detail: { inicio, fin },
+      bubbles: true,
+      composed: true
+    });
+
+    this.dispatchEvent(evento);
+
   }
 
 }
