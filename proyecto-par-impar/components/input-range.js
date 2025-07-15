@@ -28,6 +28,12 @@ class InputRange extends HTMLElement {
     this.shadowRoot.querySelector('#enviar').addEventListener('click', () => this.enviarRango());
   }
 
+  enviarRango() {
+
+    const inicio = parseInt(this.shadowRoot.querySelector('#inicio').value);
+    const fin = parseInt(this.shadowRoot.querySelector('#fin').value);
+    
+  }
 
 }
 
