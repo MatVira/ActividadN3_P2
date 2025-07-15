@@ -33,7 +33,19 @@ class ParImparLista extends HTMLElement {
     });
   }
 
-  
+  mostrarLista(inicio, fin) {
+
+    const lista = this.shadowRoot.querySelector('#lista');
+    lista.innerHTML = '';
+
+    for (let i = inicio; i <= fin; i++) {
+
+      const li = document.createElement('li');
+      li.textContent = `${i} - ${i % 2 === 0 ? 'Par' : 'Impar'}`;
+      lista.appendChild(li);
+
+    }
+  }
 
 }
 
